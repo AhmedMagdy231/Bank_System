@@ -41,7 +41,7 @@ def get_history(id):
 
     except Exception as e:
         print(type(e).__name__)
-        print('hereeeeeeeeeeeeeee')
+
 
 #Function check that id found or not
 def chec_id(ID):
