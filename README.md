@@ -1,9 +1,12 @@
 # Bank_System
+
+- Every user data save in own file to read and write from it
 - Every user can deposite money 
 - Every user can withdraw money
 - Every user can transpher money to onther user 
 - Every user can see his history of his proccess 
 - Every user can see his own data
+
 
 
 # Image Of Output
