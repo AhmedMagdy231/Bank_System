@@ -2,7 +2,7 @@ from Bank import  Bank
 import  time
 from datetime import datetime
 from History import History
-#from prettytable import PrettyTable
+from prettytable import PrettyTable
 
 list_user = []
 
@@ -176,19 +176,13 @@ def bankSystem(user):
         elif number == 5:
 
             myHistory = get_history(user.getID())
-            print('★-------------------------------------------------------------★')
-            print(f' Type \t\t Money \t current Balance \t\t date')
+
+            table = PrettyTable()
+            table.field_names = ['      Process     ', '     Money       ', '     Current       ', '      date        ']
             for history in myHistory:
-                print(f'★ {history.type} \t  {history.money} \t\t {history.current} \t\t\t {history.date}')
-
-            print('★--------------------------------------------------------------★')
-
-            # table = PrettyTable()
-            # table.field_names = ['      Process     ', '     Money       ', '     Current       ', '      date        ']
-            # for history in myHistory:
-            #    table.add_row([history.type, f'{history.money} EGP',history.current, history.date])
-            # table.title='History Of your process'
-            # print(table)
+               table.add_row([history.type, f'{history.money} EGP',history.current, history.date])
+            table.title='History Of your process'
+            print(table)
 
 
         elif number == 6:
@@ -267,12 +261,13 @@ def creatAccount():
         password = input()
         if isIntger(password):
             break
-    # table = PrettyTable()
-    # table.title='Your Data'
-    # table.field_names = ['  Name  ','  Age  ','  Gender  ','  ID  ','  Password  ']
-    # table.add_row([name,age,gender,ID,password])
-    # print(table)
-    show_data_user(name,age,gender,ID,password)
+    table = PrettyTable()
+    table.title='Your Data'
+    table.field_names = ['  Name  ','  Age  ','  Gender  ','  ID  ','  Password  ']
+    table.add_row([name,age,gender,ID,password])
+    print(table)
+
+    #show_data_user(name,age,gender,ID,password)
 
 
     user = Bank(name,age,gender,ID,password,money=0)
